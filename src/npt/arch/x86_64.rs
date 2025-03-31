@@ -2,7 +2,7 @@ use core::{convert::TryFrom, fmt};
 
 use bit_field::BitField;
 use page_table_entry::{GenericPTE, MappingFlags};
-use page_table_multiarch::{PageTable64, PagingMetaData};
+use page_table_multiarch::PagingMetaData;
 
 use crate::{GuestPhysAddr, HostPhysAddr};
 
@@ -178,6 +178,3 @@ impl PagingMetaData for ExtendedPageTableMetadata {
         todo!()
     }
 }
-
-/// The VMX extended page table. (SDM Vol. 3C, Section 29.3)
-pub type ExtendedPageTable<H> = PageTable64<ExtendedPageTableMetadata, EPTEntry, H>;

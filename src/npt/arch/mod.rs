@@ -9,6 +9,5 @@ cfg_if::cfg_if! {
         pub use self::aarch64::*;
     } else if #[cfg(any(target_arch = "riscv32", target_arch = "riscv64"))] {
         mod riscv;
-        pub use self::riscv::*;
     }
 }
